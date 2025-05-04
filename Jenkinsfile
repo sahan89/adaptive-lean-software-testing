@@ -19,21 +19,16 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-/*         stage('Test - High Priority') {
-            steps {
-                sh 'mvn test -Dtest=AppTest#testCheckoutProcess,AppTest#testPaymentProcess'
-            }
-        } */
         stage('Test') {
             steps {
                 sh 'mvn test'
             }
         }
     }
-/*     post {
+     post {
         always {
             junit 'target/surefire-reports *//*.xml'
             archiveArtifacts artifacts: 'target *//*.jar', fingerprint: true
         }
-    } */
+    }
 }
