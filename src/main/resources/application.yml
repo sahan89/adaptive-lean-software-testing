@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/football-db
+    url: jdbc:postgresql://172.19.0.2:5432/football-db
     username: root
     password: root
     driver-class-name: org.postgresql.Driver
