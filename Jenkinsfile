@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/sahan89/adaptive-lean-software-testing.git'
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/develop']],
+                          userRemoteConfigs: [[url: 'https://github.com/sahan89/adaptive-lean-software-testing.git']]
+                ])
             }
         }
         stage('Build') {
@@ -14,13 +17,11 @@ pipeline {
         }
         stage('Test - High Priority') {
             steps {
-                // Run only high-priority tests (Order 1 & 2)
                 sh 'mvn test -Dtest=AppTest#testCheckoutProcess,AppTest#testPaymentProcess'
             }
         }
         stage('Test - All') {
             steps {
-                // Run all tests (including lower priority)
                 sh 'mvn test'
             }
         }
