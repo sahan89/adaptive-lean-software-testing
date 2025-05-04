@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git clone 'https://github.com/sahan89/adaptive-lean-software-testing.git'
+                git url 'https://github.com/sahan89/adaptive-lean-software-testing.git'
             }
         }
         stage('Build') {
