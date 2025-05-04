@@ -19,19 +19,14 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Test - High Priority') {
+/*         stage('Test - High Priority') {
             steps {
                 sh 'mvn test -Dtest=AppTest#testCheckoutProcess,AppTest#testPaymentProcess'
             }
-        }
-        stage('Test - All') {
+        } */
+        stage('Test') {
             steps {
                 sh 'mvn test'
-            }
-        }
-        stage('Package') {
-            steps {
-                sh 'mvn package'
             }
         }
     }
