@@ -9,5 +9,4 @@ class AdaptiveLeanSoftwareTestingApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
