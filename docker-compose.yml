@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   jenkins:
-    build:
-      context: .
-      dockerfile: Dockerfile  # explicitly specify if not using default name
+    build: .
     container_name: jenkins-server
     image: jenkins:latest
     ports:
